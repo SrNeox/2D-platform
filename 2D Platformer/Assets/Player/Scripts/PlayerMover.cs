@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private PlayerAnimation _animation;
-    [SerializeField] private CheckGround _checkGround;
+    [SerializeField] private StateGround _checkGround;
     [SerializeField] private Rigidbody2D _rigBody;
 
     [SerializeField] private float _speed;
@@ -33,10 +33,5 @@ public class PlayerMover : MonoBehaviour
 
         if (_checkGround.OnGround() && Input.GetButton("Jump"))
             _rigBody.AddForce(new Vector2(_rigBody.velocity.x , _jumpForce));
-    }
-
-    public void MakeRebound()
-    {
-        _rigBody.AddForce(new Vector2(_rigBody.velocity.x, _reboundForce));
     }
 }

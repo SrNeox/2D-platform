@@ -62,11 +62,11 @@
   <ItemGroup>
     <Compile Include="Assets\Enemy\Scripts\EnemyMover.cs" />
     <Compile Include="Assets\Enemy\Scripts\SearchPlayer.cs" />
-    <Compile Include="Assets\Spawn\Scripts\SpawnCoin.cs" />
+    <Compile Include="Assets\Player\Scripts\StateGround.cs" />
+    <Compile Include="Assets\Player\Scripts\ResourceType.cs" />
+    <Compile Include="Assets\Coin\Scripts\Сoin.cs" />
     <Compile Include="Assets\Player\Scripts\PlayerAnimation.cs" />
-    <Compile Include="Assets\Coin\Scripts\Coin.cs" />
-    <Compile Include="Assets\Coin\Scripts\DestroyCoin.cs" />
-    <Compile Include="Assets\Player\Scripts\CheckGround.cs" />
+    <Compile Include="Assets\Spawn\Scripts\Spawner.cs" />
     <Compile Include="Assets\Player\Scripts\PlayerMover.cs" />
     <Compile Include="Assets\Player\Scripts\Wallet.cs" />
     <Compile Include="Assets\Simple 2D Platformer BE2\ReadMe\Scripts\ReadmeBE2.cs" />

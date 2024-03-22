@@ -2,11 +2,26 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    [SerializeField] private Coin _coin;
+    private ResourceType _resourse;
 
     private int _amountCoint;
 
-    public void AddMoney()
+    private void Awake()
+    {
+        TryGetComponent(out _resourse);
+    }
+
+    private void OnEnable()
+    {
+        _resourse.AddMoney += AddMoney;
+    }
+
+    private void OnDisable()
+    {
+        _resourse.AddMoney -= AddMoney;
+    }
+
+    private void AddMoney()
     {
         ++_amountCoint;
         Debug.Log(_amountCoint);

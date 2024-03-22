@@ -2,25 +2,21 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    private static readonly int runSpeed = Animator.StringToHash(nameof(runSpeed));
+
     [SerializeField] private SpriteRenderer _render;
     [SerializeField] private Animator _animator;
-    [SerializeField] private CheckGround _checkGround;
+    [SerializeField] private StateGround _checkGround;
 
     public void Flip(float direction)
     {
-        _animator.SetFloat("runSpeed", Mathf.Abs(direction));
+        _animator.SetFloat(runSpeed, Mathf.Abs(direction));
 
-        if (direction < 0)
-            _render.flipX = true;
-        else
-            _render.flipX = false;
+        _render.flipX = direction < 0;
     }
 
     public void Jump()
     {
-        if (_checkGround.OnGround())
-            _animator.SetBool("onGround", true);
-        else
-            _animator.SetBool("onGround", false);
+        _animator.SetBool("onGround", _checkGround.OnGround());
     }
 }

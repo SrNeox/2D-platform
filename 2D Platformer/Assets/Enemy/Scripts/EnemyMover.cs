@@ -6,6 +6,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] private float _speed;
 
     private int _currentPoint = 0;
+    private float _minDistanceContacts = 0.5f;
 
     private void Update()
     {
@@ -14,9 +15,9 @@ public class EnemyMover : MonoBehaviour
 
     private void MoveToPoint()
     {
-        if (Vector2.Distance(transform.position, _movePoints[_currentPoint].position) < 0.5f)
+        if (Vector2.Distance(transform.position, _movePoints[_currentPoint].position) < _minDistanceContacts)
         {
-            _currentPoint = (++_currentPoint) % _movePoints.Length;
+            _currentPoint = ++_currentPoint % _movePoints.Length;
         }
 
         transform.position = Vector3.MoveTowards(transform.position, _movePoints[_currentPoint].position, _speed * Time.deltaTime);
