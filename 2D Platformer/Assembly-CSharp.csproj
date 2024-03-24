@@ -60,15 +60,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Enemy\Scripts\EnemyMover.cs" />
-    <Compile Include="Assets\Enemy\Scripts\SearchPlayer.cs" />
-    <Compile Include="Assets\Player\Scripts\StateGround.cs" />
-    <Compile Include="Assets\Player\Scripts\ResourceType.cs" />
-    <Compile Include="Assets\Coin\Scripts\Сoin.cs" />
-    <Compile Include="Assets\Player\Scripts\PlayerAnimation.cs" />
-    <Compile Include="Assets\Spawn\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Player\Scripts\PlayerMover.cs" />
-    <Compile Include="Assets\Player\Scripts\Wallet.cs" />
+    <Compile Include="Assets\Scripts\Spawn\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\Scripts\Player\ResourceType.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
+    <Compile Include="Assets\Scripts\Player\StateGround.cs" />
+    <Compile Include="Assets\Scripts\Enemy\SearchPlayer.cs" />
+    <Compile Include="Assets\Scripts\Player\Wallet.cs" />
+    <Compile Include="Assets\Scripts\Coin\Сoin.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\Simple 2D Platformer BE2\ReadMe\Scripts\ReadmeBE2.cs" />
   </ItemGroup>
   <ItemGroup>
