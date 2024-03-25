@@ -1,9 +1,6 @@
 using UnityEngine;
 
-public class Ñoin : MonoBehaviour
+public class Coin : MonoBehaviour
 {
-    public void Destroy()
-    {
-       Destroy(gameObject);
-    }
+
 }

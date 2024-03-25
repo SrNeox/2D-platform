@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    private ResourceType _resourse;
+    private ResourceCollector _resourse;
 
     private int _amountCoint;
 
@@ -13,12 +13,12 @@ public class Wallet : MonoBehaviour
 
     private void OnEnable()
     {
-        _resourse.AddMoney += AddMoney;
+        _resourse.ÑoinCollected += AddMoney;
     }
 
     private void OnDisable()
     {
-        _resourse.AddMoney -= AddMoney;
+        _resourse.ÑoinCollected -= AddMoney;
     }
 
     private void AddMoney()

@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Ñoin _coin;
+    [SerializeField] private Coin _coin;
     [SerializeField] private Transform[] _spawns;
     [SerializeField] private int _delaySpawn = 2;
 
     private void Start()
     {
-        StartCoroutine(Spawn()); ;
+        Spawn();
     }
 
-    private IEnumerator Spawn()
+    private void Spawn()
     {
         WaitForSeconds delay = new(_delaySpawn);
 
@@ -20,13 +20,6 @@ public class Spawner : MonoBehaviour
         {
             var coin = Instantiate(_coin);
             coin.transform.position = _spawns[i].position;
-
-            yield return delay;
         }
-    }
-
-    public void Destroy(GameObject gameObject)
-    {
-        Destroy(gameObject);
     }
 }

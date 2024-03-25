@@ -379,7 +379,7 @@
 "Assets/Scripts/Enemy/SearchPlayer.cs"
 "Assets/Scripts/Player/PlayerAnimation.cs"
 "Assets/Scripts/Player/PlayerMover.cs"
-"Assets/Scripts/Player/ResourceType.cs"
+"Assets/Scripts/Player/ResourceCollector.cs"
 "Assets/Scripts/Player/StateGround.cs"
 "Assets/Scripts/Player/Wallet.cs"
 "Assets/Scripts/Spawn/Spawner.cs"

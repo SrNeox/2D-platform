@@ -62,7 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Spawn\Spawner.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
-    <Compile Include="Assets\Scripts\Player\ResourceType.cs" />
+    <Compile Include="Assets\Scripts\Player\ResourceCollector.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
     <Compile Include="Assets\Scripts\Player\StateGround.cs" />
     <Compile Include="Assets\Scripts\Enemy\SearchPlayer.cs" />

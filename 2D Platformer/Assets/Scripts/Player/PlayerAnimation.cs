@@ -2,18 +2,16 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    private static readonly int runSpeed = Animator.StringToHash(nameof(runSpeed));
-    private static readonly int onGround = Animator.StringToHash(nameof(onGround));
+    private static int runSpeed = Animator.StringToHash(nameof(runSpeed));
+    private static int onGround = Animator.StringToHash(nameof(onGround));
 
     [SerializeField] private SpriteRenderer _render;
     [SerializeField] private Animator _animator;
     [SerializeField] private StateGround _checkGround;
 
-    public void Flip(float direction)
+    public void Run(float direction)
     {
         _animator.SetFloat(runSpeed, Mathf.Abs(direction));
-
-        _render.flipX = direction < 0;
     }
 
     public void Jump()
