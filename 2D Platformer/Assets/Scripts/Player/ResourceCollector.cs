@@ -12,7 +12,7 @@ public class ResourceCollector : MonoBehaviour
     {
         if (collider.TryGetComponent(out _coin))
         {
-            _coin.IsDestroyed();
+            _coin.Destroy();
             ÑoinCollected?.Invoke();
         }
     }
