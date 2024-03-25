@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    private ResourceCollector _resourse;
+    private ResourceCollector _collector;
 
     private int _amountCoint;
 
     private void Awake()
     {
-        TryGetComponent(out _resourse);
+        TryGetComponent(out _collector);
     }
 
     private void OnEnable()
     {
-        _resourse.ÑoinCollected += AddMoney;
+        _collector.ÑoinCollected += AddMoney;
     }
 
     private void OnDisable()
     {
-        _resourse.ÑoinCollected -= AddMoney;
+        _collector.ÑoinCollected -= AddMoney;
     }
 
     private void AddMoney()
