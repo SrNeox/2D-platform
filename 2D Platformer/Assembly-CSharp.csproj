@@ -60,18 +60,20 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Spawn\Spawner.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMover.cs" />
-    <Compile Include="Assets\Scripts\Player\ResourceCollector.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
-    <Compile Include="Assets\Scripts\Player\StateGround.cs" />
-    <Compile Include="Assets\Scripts\Enemy\SearchPlayer.cs" />
-    <Compile Include="Assets\Scripts\Player\Health.cs" />
-    <Compile Include="Assets\Scripts\Player\Wallet.cs" />
-    <Compile Include="Assets\Scripts\Coin\Сoin.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
-    <Compile Include="Assets\Simple 2D Platformer BE2\ReadMe\Scripts\ReadmeBE2.cs" />
-    <Compile Include="Assets\Scripts\AidKit\AidKit.cs" />
+    <Compile Include="Assets\Components\Scripts\Enemy\EnemyHitBox.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\ResourceCollector.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\PlayerAnimation.cs" />
+    <Compile Include="Assets\Components\Scripts\Enemy\HealthEnemy.cs" />
+    <Compile Include="Assets\Components\Scripts\Spawn\Spawner.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\Health.cs" />
+    <Compile Include="Assets\Components\Scripts\AidKit\AidKit.cs" />
+    <Compile Include="Assets\Components\Scripts\Enemy\EnemyMover.cs" />
+    <Compile Include="Assets\Components\Scripts\Coin\Сoin.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\Wallet.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\PlayerHitBox.cs" />
+    <Compile Include="Assets\Components\Scripts\Enemy\SearchPlayer.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\StateGround.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
