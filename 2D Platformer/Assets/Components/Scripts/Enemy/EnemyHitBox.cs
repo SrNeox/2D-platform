@@ -5,9 +5,11 @@ public class EnemyHitBox : MonoBehaviour
 {
     public event Action ReceivedDamage;
 
+    private PlayerMover _player;
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<PlayerMover>() == true)
+        if (collider.TryGetComponent(out _player))
         {
             ReceivedDamage?.Invoke();
         }

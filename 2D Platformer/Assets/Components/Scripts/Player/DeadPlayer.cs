@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DeadPlayer : MonoBehaviour
 {
-    private Health _playerHealth;
+    private PlayerHealth _playerHealth;
 
     private void Awake()
     {

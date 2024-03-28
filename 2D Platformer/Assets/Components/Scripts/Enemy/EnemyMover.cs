@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private Transform[] _movePoints;
-    [SerializeField]private SearchPlayer _searchPlayer;
+    [SerializeField]private PlayerSearch _searchPlayer;
     [SerializeField] private float _speed;
 
     private int _currentPoint = 0;

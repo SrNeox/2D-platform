@@ -66,14 +66,14 @@
     <Compile Include="Assets\Components\Scripts\Enemy\HealthEnemy.cs" />
     <Compile Include="Assets\Components\Scripts\Spawn\Spawner.cs" />
     <Compile Include="Assets\Components\Scripts\Player\PlayerMover.cs" />
-    <Compile Include="Assets\Components\Scripts\Player\Health.cs" />
     <Compile Include="Assets\Components\Scripts\AidKit\AidKit.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Components\Scripts\Enemy\EnemyMover.cs" />
     <Compile Include="Assets\Components\Scripts\Coin\Сoin.cs" />
     <Compile Include="Assets\Components\Scripts\Player\Wallet.cs" />
     <Compile Include="Assets\Components\Scripts\Player\DeadPlayer.cs" />
     <Compile Include="Assets\Components\Scripts\Player\PlayerHitBox.cs" />
-    <Compile Include="Assets\Components\Scripts\Enemy\SearchPlayer.cs" />
+    <Compile Include="Assets\Components\Scripts\Enemy\PlayerSearch.cs" />
     <Compile Include="Assets\Components\Scripts\Player\StateGround.cs" />
   </ItemGroup>
   <ItemGroup>
