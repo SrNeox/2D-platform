@@ -380,6 +380,7 @@
 "Assets/Components/Scripts/Enemy/EnemyMover.cs"
 "Assets/Components/Scripts/Enemy/HealthEnemy.cs"
 "Assets/Components/Scripts/Enemy/SearchPlayer.cs"
+"Assets/Components/Scripts/Player/DeadPlayer.cs"
 "Assets/Components/Scripts/Player/Health.cs"
 "Assets/Components/Scripts/Player/PlayerAnimation.cs"
 "Assets/Components/Scripts/Player/PlayerHitBox.cs"

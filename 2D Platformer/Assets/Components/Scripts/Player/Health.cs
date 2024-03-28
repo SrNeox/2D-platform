@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public event Action PlayerDied;
+
     [SerializeField] PlayerHitBox _damageTrigger;
 
     private ResourceCollector _collector;
@@ -45,7 +48,15 @@ public class Health : MonoBehaviour
 
     private void TakeDamage()
     {
-        _currentHealth -= _takeDamage;
-        Debug.Log($"Здорвье после удара врага {_currentHealth}");
+        if( _currentHealth > _takeDamage)
+        {
+            _currentHealth -= _takeDamage;
+            Debug.Log($"Здорвье после удара врага {_currentHealth}");
+        }
+        else
+        {
+            PlayerDied?.Invoke();
+        }
+  
     }
 }

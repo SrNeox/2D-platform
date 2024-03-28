@@ -71,6 +71,7 @@
     <Compile Include="Assets\Components\Scripts\Enemy\EnemyMover.cs" />
     <Compile Include="Assets\Components\Scripts\Coin\Сoin.cs" />
     <Compile Include="Assets\Components\Scripts\Player\Wallet.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\DeadPlayer.cs" />
     <Compile Include="Assets\Components\Scripts\Player\PlayerHitBox.cs" />
     <Compile Include="Assets\Components\Scripts\Enemy\SearchPlayer.cs" />
     <Compile Include="Assets\Components\Scripts\Player\StateGround.cs" />
