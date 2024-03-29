@@ -25,7 +25,7 @@ public class HealthRestorer : MonoBehaviour
 
     private void Restore()
     {
-        _health.RestoreHealth();
+        _health.Heal();
     }
 
 }

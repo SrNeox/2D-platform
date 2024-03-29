@@ -11,11 +11,11 @@ public class AttackerTrigger : MonoBehaviour
     {
         if (collider.TryGetComponent(out _caracterHealth) && collider.GetComponent<PlayerMover>())
         {
-            _caracterHealth.TakeDamage(_damageEnemy);
+            _caracterHealth.Damage(_damageEnemy);
         }
         else if (collider.TryGetComponent(out _caracterHealth) && collider.GetComponent<EnemyMover>())
         {
-            _caracterHealth.TakeDamage(_damagePlayer);
+            _caracterHealth.Damage(_damagePlayer);
         }
     }
 }

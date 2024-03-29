@@ -11,8 +11,8 @@ public class EnemyMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_searchPlayer.FindPlayer() != null)
-            MoveToPlayer(_searchPlayer.FindPlayer());
+        if (_searchPlayer._player != null)
+            MoveToPlayer(_searchPlayer._player);
         else
             MoveToPoint();
     }

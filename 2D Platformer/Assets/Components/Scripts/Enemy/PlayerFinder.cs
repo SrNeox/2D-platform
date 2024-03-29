@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PlayerFinder : MonoBehaviour
 {
-    private PlayerMover _player;
+    public PlayerMover _player { get; private set; }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<PlayerMover>())
+        if (collider.GetComponent<EnemyMover>())
         {
             _player = collider.GetComponent<PlayerMover>();
         }
@@ -18,10 +18,5 @@ public class PlayerFinder : MonoBehaviour
         {
             _player = null;
         }
-    }
-
-    public PlayerMover FindPlayer()
-    {
-        return _player;
     }
 }
