@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    private static float _horizontalDirection;
-    private static bool _jump;
-
-    [SerializeField] private PlayerAnimation _animation;
-    [SerializeField] private StateGround _checkGround;
-    [SerializeField] private Rigidbody2D _rigBody;
+    private PlayerAnimation _animation;
+    private CheckerGround _checkerGround;
+    private Rigidbody2D _rigidBody;
+    private InputReader _inputReader;
 
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
@@ -15,43 +13,42 @@ public class PlayerMover : MonoBehaviour
 
     private bool _isFaceRight = true;
 
-    private void Update()
+    private void Awake()
     {
-        _horizontalDirection = Input.GetAxis("Horizontal");
-
-        _jump = Input.GetButton("Jump");
+        TryGetComponent(out _animation);
+        TryGetComponent(out _checkerGround);
+        TryGetComponent(out _rigidBody);
+        TryGetComponent(out _inputReader);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        Flip();
-        Move();
-        Jump();
+        Flip(_inputReader.SendDirection());
+        Move(_inputReader.SendDirection());
+        Jump(_inputReader.TakeLeap());
     }
 
-    private void Move()
+    private void Move(float horizontalDirection)
     {
-        _animation.Run(_horizontalDirection);
+        _animation.Run(horizontalDirection);
 
-        _rigBody.velocity = new Vector2(_horizontalDirection * _speed, _rigBody.velocity.y);
+        _rigidBody.velocity = new Vector2(horizontalDirection * _speed, _rigidBody.velocity.y);
     }
 
-    private void Jump()
+    private void Jump(bool jump)
     {
         _animation.Jump();
 
-        if (_checkGround.IsOnGround() && _jump)
-            _rigBody.AddForce(new Vector2(_rigBody.velocity.x, _jumpForce));
+        if (_checkerGround.IsOnGround() && jump)
+            _rigidBody.AddForce(new Vector2(_rigidBody.velocity.x, _jumpForce));
     }
 
-    private void Flip()
+    private void Flip(float horizontalDirection)
     {
-        if (_horizontalDirection < 0 && _isFaceRight || _horizontalDirection > 0 && !_isFaceRight)
+        if (horizontalDirection < 0 && _isFaceRight || horizontalDirection > 0 && !_isFaceRight)
         {
             _isFaceRight = !_isFaceRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            transform.Rotate(Vector2.up, 180);
         }
     }
 }

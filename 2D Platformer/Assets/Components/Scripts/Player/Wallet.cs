@@ -13,12 +13,12 @@ public class Wallet : MonoBehaviour
 
     private void OnEnable()
     {
-        _collector.ÑoinCollected += AddMoney;
+        _collector.CoinCollected += AddMoney;
     }
 
     private void OnDisable()
     {
-        _collector.ÑoinCollected -= AddMoney;
+        _collector.CoinCollected -= AddMoney;
     }
 
     private void AddMoney()

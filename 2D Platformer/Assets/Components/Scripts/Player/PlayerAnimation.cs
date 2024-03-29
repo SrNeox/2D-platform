@@ -7,7 +7,7 @@ public class PlayerAnimation : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _render;
     [SerializeField] private Animator _animator;
-    [SerializeField] private StateGround _checkGround;
+    [SerializeField] private CheckerGround _checkGround;
 
     public void Run(float direction)
     {

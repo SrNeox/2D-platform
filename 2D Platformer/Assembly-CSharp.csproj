@@ -60,21 +60,21 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Components\Scripts\Enemy\EnemyHitBox.cs" />
     <Compile Include="Assets\Components\Scripts\Player\ResourceCollector.cs" />
+    <Compile Include="Assets\Components\Scripts\AllCharacters\AttackerTrigger.cs" />
+    <Compile Include="Assets\Components\Scripts\CoinSpawn\CoinSpawner.cs" />
     <Compile Include="Assets\Components\Scripts\Player\PlayerAnimation.cs" />
-    <Compile Include="Assets\Components\Scripts\Enemy\HealthEnemy.cs" />
-    <Compile Include="Assets\Components\Scripts\Spawn\Spawner.cs" />
     <Compile Include="Assets\Components\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\Components\Scripts\AllCharacters\SlayerCharacters.cs" />
     <Compile Include="Assets\Components\Scripts\AidKit\AidKit.cs" />
-    <Compile Include="Assets\Components\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Components\Scripts\Enemy\EnemyMover.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\InputReader.cs" />
+    <Compile Include="Assets\Components\Scripts\Enemy\PlayerFinder.cs" />
     <Compile Include="Assets\Components\Scripts\Coin\Сoin.cs" />
     <Compile Include="Assets\Components\Scripts\Player\Wallet.cs" />
-    <Compile Include="Assets\Components\Scripts\Player\DeadPlayer.cs" />
-    <Compile Include="Assets\Components\Scripts\Player\PlayerHitBox.cs" />
-    <Compile Include="Assets\Components\Scripts\Enemy\PlayerSearch.cs" />
-    <Compile Include="Assets\Components\Scripts\Player\StateGround.cs" />
+    <Compile Include="Assets\Components\Scripts\AllCharacters\Health.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\HealthRestorer.cs" />
+    <Compile Include="Assets\Components\Scripts\AllCharacters\CheckerGround.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
