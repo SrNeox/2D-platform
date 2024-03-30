@@ -61,10 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Components\Scripts\Player\ResourceCollector.cs" />
-    <Compile Include="Assets\Components\Scripts\AllCharacters\AttackerTrigger.cs" />
     <Compile Include="Assets\Components\Scripts\CoinSpawn\CoinSpawner.cs" />
     <Compile Include="Assets\Components\Scripts\Player\PlayerAnimation.cs" />
+    <Compile Include="Assets\Components\Scripts\Player\PlayerAttackerTrigger.cs" />
     <Compile Include="Assets\Components\Scripts\Player\PlayerMover.cs" />
+    <Compile Include="Assets\Components\Scripts\Enemy\EnemyAttackerTrigger.cs" />
     <Compile Include="Assets\Components\Scripts\AllCharacters\SlayerCharacters.cs" />
     <Compile Include="Assets\Components\Scripts\AidKit\AidKit.cs" />
     <Compile Include="Assets\Components\Scripts\Enemy\EnemyMover.cs" />

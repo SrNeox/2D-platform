@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    private static int runSpeed = Animator.StringToHash(nameof(runSpeed));
-    private static int onGround = Animator.StringToHash(nameof(onGround));
+    private int runSpeed = Animator.StringToHash(nameof(runSpeed));
+    private int onGround = Animator.StringToHash(nameof(onGround));
 
     [SerializeField] private SpriteRenderer _render;
     [SerializeField] private Animator _animator;

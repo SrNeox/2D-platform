@@ -2,23 +2,16 @@ using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
-    private float _horizontalDirection;
-    private bool _jump;
+    private const string _horizontalDirection = "Horizontal";
+    private const string _jump = "Jump";
+
+    public float HorizontalDirection {  get; private set; }
+    public bool Jump {  get; private set; }
 
     private void Update()
     {
-        _horizontalDirection = Input.GetAxis("Horizontal");
+        HorizontalDirection = Input.GetAxis(_horizontalDirection);
 
-        _jump = Input.GetButton("Jump");
-    }
-
-    public float SendDirection()
-    {
-        return _horizontalDirection;
-    }
-
-    public bool TakeLeap()
-    {
-        return _jump;
+        Jump = Input.GetButton(_jump);
     }
 }

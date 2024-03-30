@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private float _speed;
+    [SerializeField] private float _jumpForce;
+    [SerializeField] private float _reboundForce;
+
     private PlayerAnimation _animation;
     private CheckerGround _checkerGround;
     private Rigidbody2D _rigidBody;
     private InputReader _inputReader;
-
-    [SerializeField] private float _speed;
-    [SerializeField] private float _jumpForce;
-    [SerializeField] private float _reboundForce;
 
     private bool _isFaceRight = true;
 
@@ -23,9 +23,9 @@ public class PlayerMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Flip(_inputReader.SendDirection());
-        Move(_inputReader.SendDirection());
-        Jump(_inputReader.TakeLeap());
+        Flip(_inputReader.HorizontalDirection);
+        Move(_inputReader.HorizontalDirection);
+        Jump(_inputReader.Jump);
     }
 
     private void Move(float horizontalDirection)

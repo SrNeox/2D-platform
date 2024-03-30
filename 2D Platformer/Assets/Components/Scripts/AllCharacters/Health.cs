@@ -16,12 +16,12 @@ public class Health : MonoBehaviour
 
     public void Damage(int damage)
     {
+        _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
+
         if (_currentHealth <= 0)
         {
             CharacterDied?.Invoke();
         }
-
-        _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
 
         Debug.Log($"Здорвье после удара врага {_currentHealth}");
     }

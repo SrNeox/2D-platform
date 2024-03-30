@@ -1,12 +1,14 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Health))]
+
 public class SlayerCharacters : MonoBehaviour
 {
     private Health _characterHealth;
 
     private void Awake()
     {
-        TryGetComponent(out _characterHealth);
+        _characterHealth = GetComponent<Health>();
     }
 
     private void OnEnable()
