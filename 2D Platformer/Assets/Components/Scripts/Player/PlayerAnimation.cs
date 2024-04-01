@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    private int runSpeed = Animator.StringToHash(nameof(runSpeed));
-    private int onGround = Animator.StringToHash(nameof(onGround));
+    public static readonly int RunSpeed = Animator.StringToHash(nameof(RunSpeed));
+    private static readonly int OnGround = Animator.StringToHash(nameof(OnGround));
 
     [SerializeField] private SpriteRenderer _render;
     [SerializeField] private Animator _animator;
@@ -11,11 +11,11 @@ public class PlayerAnimation : MonoBehaviour
 
     public void Run(float direction)
     {
-        _animator.SetFloat(runSpeed, Mathf.Abs(direction));
+        _animator.SetFloat(RunSpeed, Mathf.Abs(direction));
     }
 
     public void Jump()
     {
-        _animator.SetBool(onGround, _checkGround.IsOnGround());
+        _animator.SetBool(OnGround, _checkGround.IsOnGround());
     }
 }

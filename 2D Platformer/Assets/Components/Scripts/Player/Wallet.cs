@@ -8,7 +8,7 @@ public class Wallet : MonoBehaviour
 
     private void Awake()
     {
-        TryGetComponent(out _collector);
+        _collector = GetComponent<ResourceCollector>();
     }
 
     private void OnEnable()

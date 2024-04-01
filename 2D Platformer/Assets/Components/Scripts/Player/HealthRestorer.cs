@@ -9,8 +9,8 @@ public class HealthRestorer : MonoBehaviour
 
     private void Awake()
     {
-        TryGetComponent(out _health);
-        TryGetComponent(out _collector);
+        _health = GetComponent<Health>();
+        _collector = GetComponent<ResourceCollector>();
     }
 
     private void OnEnable()
