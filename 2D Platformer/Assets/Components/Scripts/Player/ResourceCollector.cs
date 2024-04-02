@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ResourceCollector : MonoBehaviour
 {
-    private Coin _coin;
-    private AidKit _aidKit;
+    private RaisedResource _coin;
+    private RaisedResource _aidKit;
 
     public event Action CoinCollected;
     public event Action PickedUpAidKit;

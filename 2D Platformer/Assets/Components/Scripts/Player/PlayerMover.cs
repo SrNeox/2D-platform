@@ -23,29 +23,31 @@ public class PlayerMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Flip(_inputReader.HorizontalDirection);
-        Move(_inputReader.HorizontalDirection);
-        Jump(_inputReader.Jump);
+        Flip();
+        Move();
+        Jump();
     }
 
-    private void Move(float horizontalDirection)
+    private void Move()
     {
-        _animation.Run(horizontalDirection);
+        _animation.Run(_inputReader.HorizontalDirection);
 
-        _rigidBody.velocity = new Vector2(horizontalDirection * _speed, _rigidBody.velocity.y);
+        _rigidBody.velocity = new Vector2(_inputReader.HorizontalDirection * _speed, _rigidBody.velocity.y);
     }
 
-    private void Jump(bool jump)
+    private void Jump()
     {
-        _animation.Jump();
-
-        if (_checkerGround.IsOnGround() && jump)
+        if (_checkerGround.IsOnGround() && _inputReader.IsJump)
+        {
             _rigidBody.AddForce(new Vector2(_rigidBody.velocity.x, _jumpForce));
+        }
+
+        _animation.Jump();
     }
 
-    private void Flip(float horizontalDirection)
+    private void Flip()
     {
-        if (horizontalDirection < 0 && _isFaceRight || horizontalDirection > 0 && !_isFaceRight)
+        if (_inputReader.HorizontalDirection < 0 && _isFaceRight || _inputReader.HorizontalDirection > 0 && !_isFaceRight)
         {
             _isFaceRight = !_isFaceRight;
             transform.Rotate(Vector2.up, 180);
