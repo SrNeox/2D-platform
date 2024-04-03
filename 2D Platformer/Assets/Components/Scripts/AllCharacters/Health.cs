@@ -3,38 +3,34 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int _currentHealth;
-    private int _maxHealth = 100;
     private int _healthImproving = 15;
 
+    public int CurrentHealth { get; private set; }
+    public int MaxHealth { get; private set; }
+
     public event Action CharacterDied;
+    public event Action Health—hanged;
 
     private void Awake()
     {
-        _currentHealth = _maxHealth;
+        MaxHealth = 100;
+        CurrentHealth = MaxHealth;
     }
 
     public void Damage(int damage)
     {
-        _currentHealth = Mathf.Clamp(_currentHealth - damage, 0, _maxHealth);
-
-        if (_currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             CharacterDied?.Invoke();
         }
 
-        Debug.Log($"«‰Ó‚¸Â ÔÓÒÎÂ Û‰‡‡ ‚‡„‡ {_currentHealth}");
+        CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
+        Health—hanged?.Invoke();
     }
 
     public void Heal()
     {
-        _currentHealth = Mathf.Clamp(_currentHealth + _healthImproving, 0, _maxHealth);
-
-        Debug.Log($"«‰Ó‚¸Â ‚ÓÒÚ‡ÌÓ‚ÎÂÌÓ , ÚÂÍÛ˘ÂÂ Á‰ÓÓ‚¸Â {_currentHealth}");
-    }
-
-    public int ConveyHealthStatus()
-    {
-        return _currentHealth;
-    }
+        CurrentHealth = Mathf.Clamp(CurrentHealth + _healthImproving, 0, MaxHealth);
+        Health—hanged?.Invoke();
+    }   
 }
