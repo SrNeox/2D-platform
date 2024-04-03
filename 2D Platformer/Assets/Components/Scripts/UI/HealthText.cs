@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class HealthText : Signer
+public class HealthText : HealthView
 {
     private TextMeshProUGUI _countHealth;
 
@@ -15,7 +15,7 @@ public class HealthText : Signer
         ChangeHealth();
     }
 
-    override public void ChangeHealth()
+    public override void ChangeHealth()
     {
         _countHealth.text = $"{HealthPlayer.MaxHealth} - {HealthPlayer.CurrentHealth}";
     }

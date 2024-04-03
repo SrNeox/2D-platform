@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarSmooth : Signer
+public class HealthBarSmooth : HealthView
 {
     [SerializeField] private Image _fillImage;
 
@@ -16,14 +16,14 @@ public class HealthBarSmooth : Signer
         TryGetComponent(out _healthBar);
     }
 
-    void Start()
+    private void Start()
     {
         _healthBar.maxValue = HealthPlayer.MaxHealth;
 
         _healthBar.value = HealthPlayer.CurrentHealth;
     }
 
-    override public void ChangeHealth()
+    public override void ChangeHealth()
     {
         if (_changeHealth != null)
             StopCoroutine(_changeHealth);

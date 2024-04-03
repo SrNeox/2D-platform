@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public int MaxHealth { get; private set; }
 
     public event Action CharacterDied;
-    public event Action Health—hanged;
+    public event Action HealthChanged;
 
     private void Awake()
     {
@@ -25,12 +25,12 @@ public class Health : MonoBehaviour
         }
 
         CurrentHealth = Mathf.Clamp(CurrentHealth - damage, 0, MaxHealth);
-        Health—hanged?.Invoke();
+        HealthChanged?.Invoke();
     }
 
     public void Heal()
     {
         CurrentHealth = Mathf.Clamp(CurrentHealth + _healthImproving, 0, MaxHealth);
-        Health—hanged?.Invoke();
+        HealthChanged?.Invoke();
     }   
 }

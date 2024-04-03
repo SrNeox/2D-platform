@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : Signer
+public class HealthBar : HealthView
 {
     [SerializeField] private Image _fillImage;
 
@@ -19,7 +19,7 @@ public class HealthBar : Signer
         _healthBar.value = HealthPlayer.CurrentHealth;
     }
 
-    override public void ChangeHealth()
+    public override void ChangeHealth()
     {
         if (_healthBar.value == 0)
             _fillImage.enabled = false;
