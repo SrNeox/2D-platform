@@ -2,9 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarSmooth : MonoBehaviour
+public class HealthBarSmooth : Signer
 {
-    [SerializeField] private Health _healthPlayer;
     [SerializeField] private Image _fillImage;
 
     private Slider _healthBar;
@@ -14,51 +13,39 @@ public class HealthBarSmooth : MonoBehaviour
 
     private void Awake()
     {
-        _healthBar = GetComponent<Slider>();
-    }
-
-    private void OnEnable()
-    {
-        _healthPlayer.Health—hanged += StartChangeHealth;
-    }
-
-    private void OnDisable()
-    {
-        _healthPlayer.Health—hanged -= StartChangeHealth;
+        TryGetComponent(out _healthBar);
     }
 
     void Start()
     {
-        _healthBar.maxValue = _healthPlayer.MaxHealth;
+        _healthBar.maxValue = HealthPlayer.MaxHealth;
 
-        _healthBar.value = _healthPlayer.CurrentHealth;
-
+        _healthBar.value = HealthPlayer.CurrentHealth;
     }
 
-    private void StartChangeHealth()
+    override public void ChangeHealth()
     {
         if (_changeHealth != null)
             StopCoroutine(_changeHealth);
-        
+
         _changeHealth = StartCoroutine(Make—hange());
     }
 
     private IEnumerator Make—hange()
     {
-        while (_healthBar.value != _healthPlayer.CurrentHealth)
+        while (_healthBar.value != HealthPlayer.CurrentHealth)
         {
-            ChangeHealth();
+            ChangeValue();
 
             if (_healthBar.value == 0)
                 _fillImage.enabled = false;
 
             yield return null;
         }
-
     }
 
-    private void ChangeHealth()
+    private void ChangeValue()
     {
-        _healthBar.value = Mathf.MoveTowards(_healthBar.value, _healthPlayer.CurrentHealth, _rateSmoothChange * Time.deltaTime);
+        _healthBar.value = Mathf.MoveTowards(_healthBar.value, base.HealthPlayer.CurrentHealth, _rateSmoothChange * Time.deltaTime);
     }
 }

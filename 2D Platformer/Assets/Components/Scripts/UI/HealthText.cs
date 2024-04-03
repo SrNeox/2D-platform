@@ -1,25 +1,13 @@
 using TMPro;
 using UnityEngine;
 
-public class HealthText : MonoBehaviour
+public class HealthText : Signer
 {
-    [SerializeField] private Health _healthPlayer;
-
     private TextMeshProUGUI _countHealth;
 
     private void Awake()
     {
-        _countHealth = GetComponent<TextMeshProUGUI>();
-    }
-
-    private void OnEnable()
-    {
-        _healthPlayer.Health—hanged += ChangeHealth;
-    }
-
-    private void OnDisable()
-    {
-        _healthPlayer.Health—hanged -= ChangeHealth;
+        TryGetComponent(out _countHealth);
     }
 
     private void Start()
@@ -27,8 +15,8 @@ public class HealthText : MonoBehaviour
         ChangeHealth();
     }
 
-    private void ChangeHealth()
+    override public void ChangeHealth()
     {
-        _countHealth.text = $"{_healthPlayer.MaxHealth} - {_healthPlayer.CurrentHealth}";
+        _countHealth.text = $"{HealthPlayer.MaxHealth} - {HealthPlayer.CurrentHealth}";
     }
 }

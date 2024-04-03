@@ -392,6 +392,7 @@
 "Assets/Components/Scripts/UI/HealthBar.cs"
 "Assets/Components/Scripts/UI/HealthBarSmooth.cs"
 "Assets/Components/Scripts/UI/HealthText.cs"
+"Assets/Components/Scripts/UI/signer.cs"
 -langversion:9.0
 
 /deterministic

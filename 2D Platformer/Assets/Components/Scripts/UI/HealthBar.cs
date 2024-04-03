@@ -1,43 +1,29 @@
-using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar : Signer
 {
-    [SerializeField] private Health _healthPlayer;
     [SerializeField] private Image _fillImage;
 
     private Slider _healthBar;
 
     private void Awake()
     {
-        _healthBar = GetComponent<Slider>();
+        TryGetComponent(out _healthBar);
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        _healthPlayer.Health—hanged += ChangeHealth;
+        _healthBar.maxValue = HealthPlayer.MaxHealth;
+
+        _healthBar.value = HealthPlayer.CurrentHealth;
     }
 
-    private void OnDisable()
-    {
-        _healthPlayer.Health—hanged -= ChangeHealth;
-    }
-
-    void Start()
-    {
-        _healthBar.maxValue = _healthPlayer.MaxHealth;
-
-        _healthBar.value = _healthPlayer.CurrentHealth;
-    }
-
-
-    private void ChangeHealth()
+    override public void ChangeHealth()
     {
         if (_healthBar.value == 0)
             _fillImage.enabled = false;
 
-        _healthBar.value = _healthPlayer.CurrentHealth;
+        _healthBar.value = HealthPlayer.CurrentHealth;
     }
 }

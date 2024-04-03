@@ -74,6 +74,7 @@
     <Compile Include="Assets\Components\Scripts\Resourses\RaisedResource.cs" />
     <Compile Include="Assets\Components\Scripts\Player\Wallet.cs" />
     <Compile Include="Assets\Components\Scripts\SpawnerResourse\SpawnerResourse.cs" />
+    <Compile Include="Assets\Components\Scripts\UI\signer.cs" />
     <Compile Include="Assets\Components\Scripts\AllCharacters\Health.cs" />
     <Compile Include="Assets\Components\Scripts\Player\HealthRestorer.cs" />
     <Compile Include="Assets\Components\Scripts\UI\HealthBarSmooth.cs" />
