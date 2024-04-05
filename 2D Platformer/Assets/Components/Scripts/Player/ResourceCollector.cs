@@ -3,22 +3,21 @@ using UnityEngine;
 
 public class ResourceCollector : MonoBehaviour
 {
-    private RaisedResource _coin;
-    private RaisedResource _aidKit;
+    private RaisedResource _resourse;
 
     public event Action CoinCollected;
     public event Action PickedUpAidKit;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.TryGetComponent(out _coin))
+        if (collider.TryGetComponent(out _resourse) && collider.GetComponent<Coin>())
         {
-            _coin.Destroy();
+            _resourse.Destroy();
             CoinCollected?.Invoke();
         }
-        else if (collider.TryGetComponent(out _aidKit))
+        else if (collider.TryGetComponent(out _resourse) && collider.GetComponent<AidKit>())
         {
-            _aidKit.Destroy();
+            _resourse.Destroy();
             PickedUpAidKit?.Invoke();
         }
     }

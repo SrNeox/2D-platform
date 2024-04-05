@@ -17,6 +17,6 @@ public class HealthText : HealthView
 
     public override void ChangeHealth()
     {
-        _countHealth.text = $"{HealthPlayer.MaxHealth} - {HealthPlayer.CurrentHealth}";
+        _countHealth.text = $"{HealthCharacter.MaxHealth} - {HealthCharacter.CurrentHealth}";
     }
 }

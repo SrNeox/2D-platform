@@ -2,16 +2,16 @@ using UnityEngine;
 
 public abstract class HealthView : MonoBehaviour
 {
-    [SerializeField] protected Health HealthPlayer;
+    [SerializeField] protected Health HealthCharacter;
 
     private void OnEnable()
     {
-        HealthPlayer.HealthChanged += ChangeHealth;
+        HealthCharacter.HealthChanged += ChangeHealth;
     }
 
     private void OnDisable()
     {
-        HealthPlayer.HealthChanged -= ChangeHealth;
+        HealthCharacter.HealthChanged -= ChangeHealth;
     }
 
     public abstract void ChangeHealth();

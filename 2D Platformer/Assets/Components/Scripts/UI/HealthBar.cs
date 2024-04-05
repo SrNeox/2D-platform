@@ -14,9 +14,9 @@ public class HealthBar : HealthView
 
     private void Start()
     {
-        _healthBar.maxValue = HealthPlayer.MaxHealth;
+        _healthBar.maxValue = HealthCharacter.MaxHealth;
 
-        _healthBar.value = HealthPlayer.CurrentHealth;
+        _healthBar.value = HealthCharacter.CurrentHealth;
     }
 
     public override void ChangeHealth()
@@ -24,6 +24,6 @@ public class HealthBar : HealthView
         if (_healthBar.value == 0)
             _fillImage.enabled = false;
 
-        _healthBar.value = HealthPlayer.CurrentHealth;
+        _healthBar.value = HealthCharacter.CurrentHealth;
     }
 }

@@ -8,7 +8,6 @@ public class HealthBarSmooth : HealthView
 
     private Slider _healthBar;
     private Coroutine _changeHealth;
-
     private int _rateSmoothChange = 15;
 
     private void Awake()
@@ -18,9 +17,9 @@ public class HealthBarSmooth : HealthView
 
     private void Start()
     {
-        _healthBar.maxValue = HealthPlayer.MaxHealth;
+        _healthBar.maxValue = HealthCharacter.MaxHealth;
 
-        _healthBar.value = HealthPlayer.CurrentHealth;
+        _healthBar.value = HealthCharacter.CurrentHealth;
     }
 
     public override void ChangeHealth()
@@ -33,7 +32,7 @@ public class HealthBarSmooth : HealthView
 
     private IEnumerator Make—hange()
     {
-        while (_healthBar.value != HealthPlayer.CurrentHealth)
+        while (_healthBar.value != HealthCharacter.CurrentHealth)
         {
             ChangeValue();
 
@@ -46,6 +45,6 @@ public class HealthBarSmooth : HealthView
 
     private void ChangeValue()
     {
-        _healthBar.value = Mathf.MoveTowards(_healthBar.value, base.HealthPlayer.CurrentHealth, _rateSmoothChange * Time.deltaTime);
+        _healthBar.value = Mathf.MoveTowards(_healthBar.value, HealthCharacter.CurrentHealth, _rateSmoothChange * Time.deltaTime);
     }
 }

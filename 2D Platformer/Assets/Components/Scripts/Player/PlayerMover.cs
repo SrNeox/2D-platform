@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
@@ -11,7 +12,9 @@ public class PlayerMover : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private InputReader _inputReader;
 
-    private bool _isFaceRight = true;
+    public bool IsFaceRight { get; private set; }
+
+    public event Action RotateBar;
 
     private void Awake()
     {
@@ -45,12 +48,13 @@ public class PlayerMover : MonoBehaviour
         _animation.Jump();
     }
 
-    private void Flip()
+    public void Flip()
     {
-        if (_inputReader.HorizontalDirection < 0 && _isFaceRight || _inputReader.HorizontalDirection > 0 && !_isFaceRight)
+        if (_inputReader.HorizontalDirection > 0 && IsFaceRight || _inputReader.HorizontalDirection < 0 && !IsFaceRight)
         {
-            _isFaceRight = !_isFaceRight;
+            IsFaceRight = !IsFaceRight;
             transform.Rotate(Vector2.up, 180);
+            RotateBar?.Invoke();
         }
     }
 }

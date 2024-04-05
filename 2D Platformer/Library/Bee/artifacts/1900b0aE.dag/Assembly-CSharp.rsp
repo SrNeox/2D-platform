@@ -387,12 +387,15 @@
 "Assets/Components/Scripts/Player/PlayerMover.cs"
 "Assets/Components/Scripts/Player/ResourceCollector.cs"
 "Assets/Components/Scripts/Player/Wallet.cs"
+"Assets/Components/Scripts/Resourses/AidKit.cs"
+"Assets/Components/Scripts/Resourses/Coin.cs"
 "Assets/Components/Scripts/Resourses/RaisedResource.cs"
 "Assets/Components/Scripts/SpawnerResourse/SpawnerResourse.cs"
 "Assets/Components/Scripts/UI/HealthBar.cs"
 "Assets/Components/Scripts/UI/HealthBarSmooth.cs"
 "Assets/Components/Scripts/UI/HealthText.cs"
 "Assets/Components/Scripts/UI/HealthView.cs"
+"Assets/Components/Scripts/UI/RotateBar.cs"
 -langversion:9.0
 
 /deterministic
