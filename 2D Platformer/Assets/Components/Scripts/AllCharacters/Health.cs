@@ -1,14 +1,14 @@
 using System;
+using System.ComponentModel;
+using Unity.Collections;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int _healthImproving = 15;
     private int _minHealth = 0;
 
     public int CurrentHealth { get; private set; }
     public int MaxHealth { get; private set; }
-
 
     public event Action CharacterDied;
     public event Action HealthChanged;
@@ -30,9 +30,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal()
+    public void Heal(int healthImproving)
     {
-        CurrentHealth = Mathf.Clamp(CurrentHealth + _healthImproving, 0, MaxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth + healthImproving, 0, MaxHealth);
         HealthChanged?.Invoke();
     }
 }

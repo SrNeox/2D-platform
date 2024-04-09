@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthRestorer : MonoBehaviour
 {
     private Health _health;
     private ResourceCollector _collector;
+    private int _healthImproving = 15;
 
     private void Awake()
     {
@@ -25,7 +24,7 @@ public class HealthRestorer : MonoBehaviour
 
     private void Restore()
     {
-        _health.Heal();
+        _health.Heal(_healthImproving);
     }
 
 }

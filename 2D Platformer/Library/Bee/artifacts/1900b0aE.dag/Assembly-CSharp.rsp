@@ -382,6 +382,7 @@
 "Assets/Components/Scripts/Enemy/PlayerFinder.cs"
 "Assets/Components/Scripts/Player/HealthRestorer.cs"
 "Assets/Components/Scripts/Player/InputReader.cs"
+"Assets/Components/Scripts/Player/LifeSteal.cs"
 "Assets/Components/Scripts/Player/PlayerAnimation.cs"
 "Assets/Components/Scripts/Player/PlayerAttackerTrigger.cs"
 "Assets/Components/Scripts/Player/PlayerMover.cs"
